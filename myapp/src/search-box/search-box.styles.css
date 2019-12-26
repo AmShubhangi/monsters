@@ -1,9 +1,10 @@
 .search {
   -wenkit-appearance: none;
-  border: none;
+  border: 3px inset green;
   outline: none;
   padding: 10px;
-  width: 150px;
+  width: 270px;
   line-height: 30px;
   margin-bottom: 30px;
+  border-style: inset;
 }
