@@ -1,12 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
+import { CardList } from './card-list/card-list.component';
 import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      usersData: [],
       monsters: [
         { name: 'Dracula', id: 1 },
         { name: 'Tejal', id: 2 },
@@ -28,16 +28,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Monsters of India</h1>
-        {
-          this.state.monsters.map(monsters => {
-            return (<h2 key={monsters.id}>{monsters.name}</h2>)
-          })
-        }
-        {/* <div>
-          {this.state.usersData.map(data=>{
-            return(<div key={data.id}>{data.name}</div>)
-          })}
-        </div> */}
+        {/* // Method 2 */}
+        <CardList monsters={this.state.monsters}>
+          {/*  Method 1 */}
+          {/* {
+            this.state.monsters.map(monsters => {
+              return (<h2 key={monsters.id}>{monsters.name}</h2>)
+            })
+          } */}
+        </CardList>
       </div>
     );
   }
