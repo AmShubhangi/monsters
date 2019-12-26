@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import Axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      usersData: [],
       monsters: [
         { name: 'Dracula', id: 1 },
         { name: 'Tejal', id: 2 },
@@ -16,6 +17,13 @@ class App extends React.Component {
       ]
     }
   }
+
+  componentDidMount() {
+    Axios.get('https://jsonplaceholder.typicode.com/users').then(data => {
+      this.setState({ monsters: data.data })
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -25,6 +33,11 @@ class App extends React.Component {
             return (<h2 key={monsters.id}>{monsters.name}</h2>)
           })
         }
+        {/* <div>
+          {this.state.usersData.map(data=>{
+            return(<div key={data.id}>{data.name}</div>)
+          })}
+        </div> */}
       </div>
     );
   }
