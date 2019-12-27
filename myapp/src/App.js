@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { CardList } from './card-list/card-list.component';
 import './App.css';
 import { SearchBox } from './search-box/search-box.component';
+import Footer from './footer';
 
 class App extends React.Component {
   constructor() {
@@ -31,19 +32,22 @@ class App extends React.Component {
       monster.name.toLowerCase().includes(searchField.toLowerCase()))
 
     return (
-      <div className="App">
-        <h1 className="heading">Monsters of India</h1>
+      <div>
+        <div className="App">
+          <h1 className="heading">Monsters of India</h1>
 
-        <SearchBox placeholder="Search  Monsters" handleChange={this.handleChange} />
+          <SearchBox placeholder="Search  Monsters" handleChange={this.handleChange} />
 
-        {/* // Method 2 */}
-        <CardList monsters={filteredMonsters} />
-        {/*  Method 1 */}
-        {/* {
+          {/* // Method 2 */}
+          <CardList monsters={filteredMonsters} />
+          {/*  Method 1 */}
+          {/* {
             this.state.monsters.map(monsters => {
               return (<h2 key={monsters.id}>{monsters.name}</h2>)
             })
           } */}
+        </div>
+        <Footer />
       </div>
     );
   }
