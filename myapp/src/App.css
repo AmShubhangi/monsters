@@ -2,9 +2,10 @@
   text-align: center;
 }
 
-h1{
-  font-family: 'Bigelow Rules';
+h1.heading {
   font-size: 72px;
+  color: darkred;
+  font-family: "Bigelow Rules";
 }
 
 .App-logo {
@@ -19,7 +20,7 @@ h1{
 }
 body {
   background: linear-gradient(0deg, rgba(34, 185, 195, 1) 38%, rgba(253, 213, 45, 0.33043510372899154) 100%);
-  font-family: 'Bigelow Rules', cursive;
+  /* font-family: 'Bigelow Rules', cursive; */
 }
 
 .App-header {
