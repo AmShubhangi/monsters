@@ -11,12 +11,17 @@ class App extends React.Component {
       monsters: [],
       searchField: ''
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     Axios.get('https://jsonplaceholder.typicode.com/users').then(data => {
       this.setState({ monsters: data.data })
     })
+  }
+
+  handleChange(e) {
+    this.setState({ searchField: e.target.value })
   }
 
   render() {
@@ -29,7 +34,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Monsters of India</h1>
 
-        <SearchBox placeholder="search  monsters" handleChange={e => this.setState({ searchField: e.target.value })} />
+        <SearchBox placeholder="Search  Monsters" handleChange={this.handleChange} />
 
         {/* // Method 2 */}
         <CardList monsters={filteredMonsters} />

@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+h1{
+  font-family: 'Bigelow Rules';
+  font-size: 72px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +16,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+body {
+  background: linear-gradient(0deg, rgba(34, 185, 195, 1) 38%, rgba(253, 213, 45, 0.33043510372899154) 100%);
+  font-family: 'Bigelow Rules', cursive;
 }
 
 .App-header {
